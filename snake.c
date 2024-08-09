@@ -4,6 +4,7 @@
 #include <assert.h>
 #include <conio.h>
 #include <windows.h>
+#include <time.h>
 
 bool is_game_over;
 
@@ -243,6 +244,7 @@ void draw(void)
 
 int main(int argc, char const *argv[])
 {
+    srand(time(NULL));
     struct snake_node * new_node = NULL;
     int fruit_counter = 0;
 
@@ -264,7 +266,8 @@ int main(int argc, char const *argv[])
         }
         draw();
         printf("fruits counter = %d\n", fruit_counter);
-        Sleep(500);
+        Sleep(250);
     }
+    getc(stdin);
     return 0;
 }
